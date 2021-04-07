@@ -14,10 +14,10 @@
         "php": "^7.2 || ^8.0",
         "composer/composer": "^1.0 || ^2.0",
         "october/rain": "1.1.*",
+        "nunomaduro/larastan": "^0.7",
         "ext-json": "*"
     },
     "require-dev": {
-        "nunomaduro/larastan": "^0.7",
         "orchestra/testbench": "^4.0 || ^5.0 || ^6.0 || ^7.0",
         "phpunit/phpunit": "^7.3 || ^8.2 || ^9.3"
     },
