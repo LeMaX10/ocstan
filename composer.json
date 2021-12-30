@@ -14,7 +14,7 @@
         "php": "^7.2 || ^8.0",
         "composer/composer": "^1.0 || ^2.0",
         "october/rain": "1.1.*|2.0.*|2.1.*",
-        "nunomaduro/larastan": "^0.7",
+        "nunomaduro/larastan": "^1.0",
         "ext-json": "*"
     },
     "require-dev": {

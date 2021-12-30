@@ -116,10 +116,17 @@ class BuilderHelper extends \NunoMaduro\Larastan\Methods\BuilderHelper
         );
     }
 
-    public function searchOnEloquentBuilder(ClassReflection $eloquentBuilder, string $methodName, string $modelClassName): ?MethodReflection
+    /**
+     * @param  ClassReflection  $eloquentBuilder  Can be `EloquentBuilder` or a custom builder extending it.
+     * @param  string  $methodName
+     * @param  ClassReflection  $model
+     * @return MethodReflection|null
+     *
+     * @throws MissingMethodFromReflectionException
+     * @throws ShouldNotHappenException
+     */
+    public function searchOnEloquentBuilder(ClassReflection $eloquentBuilder, string $methodName, ClassReflection $model): ?MethodReflection
     {
-        $model = $this->reflectionProvider->getClass($modelClassName);
-
         if ($model->hasNativeMethod('scope'.ucfirst($methodName))) {
             $methodReflection = $model->getNativeMethod('scope'.ucfirst($methodName));
             $parametersAcceptor = ParametersAcceptorSelector::selectSingle($methodReflection->getVariants());
